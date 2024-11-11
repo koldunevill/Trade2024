@@ -32,10 +32,20 @@ namespace KoldunTrade
         public int ProductQuantityInStock { get; set; }
         public string ProductUnit { get; set; }
         public string ProductPhoto { get; set; }
+        
+        public bool CheckDiscount
+        {
+            get
+            {
+                if (ProductDiscountAmount>=5)
+                {
+                    return true;
+                } 
+                else
+                    return false;
+            }
+        }
 
-
-       
-    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
     }
